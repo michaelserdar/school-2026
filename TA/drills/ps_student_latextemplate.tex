@@ -1,0 +1,88 @@
+\documentclass[11pt]{article}
+\def\psnum{0} %Replace 0 by the Problem Set number
+\def\studname{0} %Replace 0 by your name
+\def\credits{0} %Replace 0 by your credit statement
+
+
+
+\usepackage{amsmath, amssymb, amsthm, xcolor, graphicx}
+\usepackage{algorithm}
+\usepackage[noend]{algpseudocode}
+\algrenewcomment[1]{~~~~{\footnotesize \(\triangleright\) {\color{blue} #1}}}
+
+%Add additional packages below
+\usepackage{tikz}
+
+
+%DO NOT EDIT ANYTHING FROM HERE TILL "\begin{document}"
+
+\setlength{\oddsidemargin}{0pt}
+\setlength{\evensidemargin}{0pt}
+\setlength{\textwidth}{6.5in}
+\setlength{\topmargin}{0in}
+
+\def\header{
+	\fbox{\parbox{\linewidth}{
+\begin{center}
+  \textbf{CSC 2400-002: Design of Algorithms (Spring 2026)}\\
+  \textbf{Tennessee Tech University}\\
+  \textbf{Instructor:} Prantar Ghosh\\
+  \vspace{1ex}
+  \textbf{Graded Problem Set \psnum}
+\end{center}
+
+  \vspace{1ex}
+
+  \textbf{Name:} \studname\\
+  \textbf{Credit Statement:} \credits
+    }
+    }
+    
+\vspace{4ex}
+    }
+
+\newenvironment{solution}[1]{%
+  \par\medskip
+  \noindent\textbf{Solution to Problem #1:}\ \ignorespaces
+}{%
+  \par\medskip
+}
+
+
+\begin{document}
+
+\header
+
+%Add solutions to the assignment problems using the sample environment shown below
+
+
+\begin{solution}{0}%Replace 0 with the Problem number, e.g., 1(a), 2, etc.
+Here is the pseudocode.
+%The text below shows how to write a pseudocode
+
+\newcommand{\cmin}{\mathsf{curr\_min}}
+    
+\begin{algorithm}[H]
+  \caption{Finding the smallest element in an array}
+  \label{alg:minfind}
+  \begin{algorithmic}[1]
+
+  \Statex \textbf{Input:} Array $A$ of $n$ integers, given by $(A[1],\ldots, A[n])$
+\Statex \textbf{Output:} $\min(A):=$ the element with minimum value in $A$  
+  \State $\cmin \gets A[1]$ \Comment{initialize $\cmin$ to first element}
+  \For{$i=2$ to $n$}:
+  \If{$A[i]<\cmin$}: \Comment{If $A[i]$ is smaller than the current smallest}
+  \State $\cmin \gets A[i]$ \Comment{reset $\cmin$ to $A[i]$}
+\EndIf
+  \EndFor
+  \State \Return $\cmin$
+\end{algorithmic}
+\end{algorithm}
+\end{solution}
+
+
+
+
+
+
+\end{document}
